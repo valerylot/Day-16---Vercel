@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Who's That Pokémon?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game">
+      <h1>Who's That Pokémon?</h1>
+
+      <div class="scoreboard">
+        <p>Round <span id="round">0</span> / 10</p>
+        <p>Score <span id="score">0</span></p>
+        <p>Streak <span id="streak">0</span></p>
+      </div>
+
+      <div class="stage">
+        <img id="pokemon-img" class="silhouette" src="" alt="A mystery Pokémon" hidden />
+        <p id="message">Press Start to play!</p>
+      </div>
+
+      <div id="choices" class="choices"></div>
+
+      <button id="start-button" class="big-button" type="button">Start ▶️</button>
+      <button id="next-button" class="big-button" type="button" hidden>Next Pokémon ➡️</button>
+    </main>
+
+    <footer>
+      <p id="version">v1.0 · data from PokéAPI</p>
+    </footer>
+
+    <!--
+      type="module" is what makes import and export legal.
+      Modules need Live Server (or Vercel). A double-click won't work.
+    -->
+    <script type="module" src="scripts.js"></script>
+  </body>
+</html>

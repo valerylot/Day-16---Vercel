@@ -1,0 +1,163 @@
+/* =====================================================================
+   🎨 styles.css · Who's That Pokémon?
+   ===================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #1f2937;
+  background: #e3350d; /* Poké Ball red */
+}
+
+.game {
+  width: 100%;
+  max-width: 560px;
+  padding: 24px;
+  text-align: center;
+  background: #ffffff;
+  border: 6px solid #1f2937;
+  border-radius: 24px;
+  box-shadow: 0 12px 0 #1f2937;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-family: "Luckiest Guy", system-ui, sans-serif;
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+  color: #ffcb05; /* Pokémon yellow */
+  -webkit-text-stroke: 2px #2a75bb; /* Pokémon blue outline */
+}
+
+/* ---------- Scoreboard ---------- */
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.scoreboard p {
+  flex: 1;
+  margin: 0;
+  padding: 8px;
+  font-weight: 700;
+  background: #f3f4f6;
+  border-radius: 12px;
+}
+
+.scoreboard span {
+  color: #2a75bb;
+}
+
+/* ---------- The stage, like the TV show ---------- */
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 300px;
+  padding: 16px;
+  border-radius: 16px;
+  background: repeating-conic-gradient(#2a75bb 0deg 10deg, #3d8bd4 10deg 20deg);
+}
+
+#pokemon-img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  transition: filter 0.6s ease;
+}
+
+/* The silhouette trick: turn every colored pixel black. */
+.silhouette {
+  filter: brightness(0);
+}
+
+#message {
+  margin: 0;
+  padding: 8px 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: #ffffff;
+  border-radius: 999px;
+}
+
+/* ---------- Answer buttons ---------- */
+.choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.choice {
+  padding: 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1f2937;
+  background: #ffcb05;
+  border: 3px solid #1f2937;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.choice:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.choice:disabled {
+  cursor: default;
+}
+
+.correct {
+  color: #ffffff;
+  background: #16a34a;
+}
+
+.wrong {
+  color: #ffffff;
+  background: #dc2626;
+}
+
+/* ---------- Start / Next ---------- */
+.big-button {
+  width: 100%;
+  padding: 14px;
+  font-family: "Luckiest Guy", system-ui, sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background: #2a75bb;
+  border: 3px solid #1f2937;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .choices {
+    grid-template-columns: 1fr;
+  }
+}
